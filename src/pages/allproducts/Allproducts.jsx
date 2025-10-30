@@ -6,7 +6,7 @@ import Card from "../../components/card/Card";
 import Advantage from '../home/advantages/Advantage'
 import Footer from "../../components/footer/Footer";
 
-export default function Allproducts() {
+export default function Allproducts({setsearch}) {
   const products = useContext(ProductContext);
 
   const [brands, setBrands] = useState(brandsMenu);
@@ -55,7 +55,7 @@ export default function Allproducts() {
   if (sort === 5) filteredProducts.sort((a, b) => b.finalPrice - a.finalPrice);
 
   return (
-    < div className='bg-black'>
+    < div className='bg-black' onClick={()=>{setsearch(false)}}>
       <div className="filter-page">
         <aside className="sidebar">
           <h3>Sort By</h3>

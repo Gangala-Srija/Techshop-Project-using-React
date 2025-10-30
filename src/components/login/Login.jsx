@@ -1,7 +1,5 @@
 import React from 'react';
 import '../login/Login.css';
-import { FaFacebookF, FaGoogle, FaTwitter } from 'react-icons/fa';
-
 export default function Login({
   showPreview,
   setShowPreview,
@@ -41,22 +39,22 @@ export default function Login({
         <div className="modal-backdrop fade show" style={{ zIndex: 1050 }} onClick={closeAll} >
           <div className="modal d-block"  onClick={(e) => e.stopPropagation()} style={{ zIndex: 1055 }}>
             <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content bg-dark border border-secondary-subtle w-75">
+              <div className="modal-content bg-black border border-secondary-subtle w-75">
                 <div className="modal-body p-4 position-relative ">
                   <button type="button" className="btn-close btn-close-white position-absolute top-0 end-0 mt-2 me-2" onClick={closeAll} />
                   <h4 className="text-white mb-3">Login</h4>
                    <div className="d-flex mb-3">
-                    <p className="text-white me-1 opacity-50">New to Tech-Shop?</p>
+                    <p className="text-white me-1">New to Tech-Shop?</p>
                     <button className="btn btn-link text-white text-decoration-none btn-create p-0 "
                       onClick={openSignup}
                     >Create an account </button>
                   </div>
                     <form onSubmit={(e) => e.preventDefault()}>
                     <div className="mb-3">
-                      <input type="email" className="form-control bg-dark border-secondary-subtle text-white" placeholder="Email" required/>
+                      <input type="email" className="form-control bg-black border-secondary-subtle text-white" placeholder="Email" required/>
                     </div>
                     <div className="mb-3">
-                      <input type="password" className="form-control bg-dark border-secondary-subtle text-white"placeholder="Password"
+                      <input type="password" className="form-control bg-black border-secondary-subtle text-white"placeholder="Password"
                         required
                       />
                     </div>
@@ -83,28 +81,28 @@ export default function Login({
         <div className="modal-backdrop fade show" style={{ zIndex: 1050 }} onClick={closeAll}>
           <div className="modal d-block" onClick={(e) => e.stopPropagation()} style={{ zIndex: 1055 }}>
             <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content bg-dark border border-secondary-subtle w-75">
+              <div className="modal-content bg-black border border-secondary-subtle w-75">
                 <div className="modal-body p-4 position-relative">
                   <button type="button" className="btn-close btn-close-white position-absolute top-0 end-0 mt-2 me-2" onClick={closeAll} />
                   <h4 className="text-white mb-3">Sign Up</h4>
                    <div className="d-flex mb-3">
-                    <p className="text-white me-1 opacity-50">Already have an account?</p>
+                    <p className="text-white me-1">Already have an account?</p>
                     <button className="btn btn-link text-white text-decoration-none btn-login p-0 " onClick={backToLogin} >
                       Login</button>
                   </div>
 
                   <form onSubmit={(e) => e.preventDefault()}>
                     <div className="mb-3">
-                      <input type="text" className="form-control bg-dark border-secondary-subtle text-white" placeholder="Username" required />
+                      <input type="text" className="form-control bg-black border-secondary-subtle text-white" placeholder="Username" required />
                     </div>
                     <div className="mb-3">
-                      <input type="email" className="form-control bg-dark border-secondary-subtle text-white" placeholder="Email" required />
+                      <input type="email" className="form-control bg-black border-secondary-subtle text-white" placeholder="Email" required />
                     </div>
                     <div className="mb-3">
-                      <input type="password" className="form-control bg-dark border-secondary-subtle text-white" placeholder="Password" required  />
+                      <input type="password" className="form-control bg-black  border-secondary-subtle text-white" placeholder="Password" required  />
                     </div>
                     <div className="mb-3">
-                      <input  type="password"  className="form-control bg-dark border-secondary-subtle text-white" placeholder="Confirm Password"  required />
+                      <input  type="password"  className="form-control bg-black border-secondary-subtle text-white" placeholder="Confirm Password"  required />
                     </div>
 
                     <div className="d-grid">

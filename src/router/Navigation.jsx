@@ -12,8 +12,8 @@ export default function Navigation({setsearch}) {
       <Routes>
         <Route path="/" element={<Container setsearch={setsearch}/>}></Route>
         <Route path="/products/:id" element={<ProductDetails/>}/>
-        <Route path="/allproduct" element={<Allproducts/>}/>
-        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/allproduct" element={<Allproducts setsearch={setsearch}/>}/>
+        <Route path="/cart" element={<Cart setsearch={setsearch}/>}/>
       </Routes>
     </div>
   )

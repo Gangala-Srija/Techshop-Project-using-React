@@ -7,7 +7,7 @@ import { FaTrash } from 'react-icons/fa';
 import { incrementQuantity, decrementQuantity, removeFromCart } from '../../rtk_store/ProductSlice'; // Adjust path if needed
 import Footer from '../../components/footer/Footer';
 
-export default function Cart() {
+export default function Cart({setsearch}) {
   const cartItems = useSelector((state) => state.productItems.Data);
   const dispatch = useDispatch();
   console.log("cartItems", cartItems);
@@ -17,10 +17,11 @@ export default function Cart() {
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0) || 0;
   if (cartItems.length === 0) {
     return (
-      <div className='cart-container'>
+      <div className='cart-container' onClick={()=>{setsearch(false)}}>
         <div className='cart-icon-addproduct'>
           <FaShoppingCart size={84} className='text-danger ms-4' />
           <h3 className='mt-2'>Cart is Empty</h3>
+          <button className='bg-danger text-white p-1  ms-3 w-75'>Start Shopping</button>
         </div>
       </div>
     );

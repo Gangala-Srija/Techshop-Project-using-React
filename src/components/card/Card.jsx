@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IndianRupee } from 'lucide-react';
 import '../card/Card.css'
 import { useDispatch } from 'react-redux'
@@ -17,6 +17,14 @@ export default function Card({ item }) {
     return stars.join('');
   };
   const dispatch = useDispatch();
+    const [isAdded, setIsAdded] = useState(false);
+     const handleAddToCart = () => {
+    dispatch(addToCart(item));
+    setIsAdded(true);
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 1500); 
+  };
   return (
 
     <div class="card pt-2 bg-dark border border-secondary" style={{ width: "280px" }}  >
@@ -43,10 +51,12 @@ export default function Card({ item }) {
           <p className="price-card d-flex"> <IndianRupee size={15} color="#fbf6f6ff" className='iconrupee' />{item.finalPrice}</p>
           <p className="product-originalprice-card  opacity-50 text-decoration-line-through ms-2  d-flex"><IndianRupee size={15} color="#aeaaaaff" />{item.originalPrice}</p>
         </div>
-        <button class="btn btn-danger w-100" onClick={() => { dispatch(addToCart(item)) }}>Add to cart</button>
+        <button className={`btn w-100 ${isAdded ? 'btn-success' : 'btn-danger'}`} onClick={handleAddToCart} disabled={isAdded} >
+          {isAdded ? 'Added!' : 'Add to cart'}
+        </button>
       </div>
     </div>
-
-
-  )
+)
 }
+
+

@@ -12,7 +12,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../rtk_store/ProductSlice'; 
 
 export default function ProductDetails() {
-  const dispatch = useDispatch(); // New
+  const dispatch = useDispatch(); 
   const { id } = useParams();
   const products = useContext(ProductContext);
   const filterData = products.find(item => item.id === parseInt(id));
