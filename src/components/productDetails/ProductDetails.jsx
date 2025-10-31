@@ -24,6 +24,14 @@ export default function ProductDetails() {
     filterData.heroImage || filterData.assets?.[0]
   );
   const [activeTab, setActiveTab] = useState('specification');
+   const [isAdded, setIsAdded] = useState(false);
+       const handleAddToCart = () => {
+      dispatch(addToCart(filterData));
+      setIsAdded(true);
+      setTimeout(() => {
+        setIsAdded(false);
+      }, 1500); 
+    };
 
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
@@ -106,12 +114,9 @@ export default function ProductDetails() {
           <button className="discount-btn">No Cost EMI on Credit Card</button>
           <button className="discount-btn">Pay Later & Avail Cashback</button>
           <hr className="mt-4" />
-          <button 
-            className="bg-danger w-50 p-1" 
-            onClick={() => dispatch(addToCart(filterData))} 
-          >
-            Add To Cart
-          </button>
+           <button className={`btn w-100 ${isAdded ? 'btn-success' : 'btn-danger'}`} onClick={handleAddToCart} disabled={isAdded} >
+          {isAdded ? 'Added!' : 'Add to cart'}
+        </button>
         </div>
       </div>
       <div className="product-overview text-white">
